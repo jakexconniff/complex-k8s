@@ -22,8 +22,9 @@ class Fib extends Component {
 
   async fetchSeenValues() {
     const seenValues = await axios.get('api/values/all');
+    let newData = Array.from(seenIndexes.data);
     this.setState({
-      seenValues: seenValues.data
+      seenValues: newData
     });
   }
 
